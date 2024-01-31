@@ -17,7 +17,6 @@ class Customer(DisplayData):
     login = models.CharField(max_length=255, unique=True)
     password = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
-    company_id = models.IntegerField()
     customer_company = models.ForeignKey(CustomerCompany, on_delete=models.CASCADE)
     credit_cards = models.TextField()
 
