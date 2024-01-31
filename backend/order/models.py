@@ -8,6 +8,7 @@ class Order(DisplayData):
     id = models.BigAutoField(auto_created=True, primary_key=True)
     order_name = models.CharField(max_length=255)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, to_field='user_id')
+    created_at = models.DateTimeField(null=True)
 
     class Meta:
         db_table = 'order'

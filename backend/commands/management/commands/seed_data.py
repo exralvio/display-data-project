@@ -65,8 +65,8 @@ class Command(BaseCommand):
 
     def import_order(self, datas):
         for data in datas:
-            key, _, order_name, customer_id = data
-            Order.objects.create(id=key, order_name=order_name, customer_id=customer_id)
+            key, created_at, order_name, customer_id = data
+            Order.objects.create(id=key, order_name=order_name, customer_id=customer_id, created_at=created_at)
         self.stdout.write(self.style.SUCCESS(f'Order created'))
 
     def import_order_item(self, datas):
