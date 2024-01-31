@@ -15,7 +15,7 @@ class Order(DisplayData):
 
 class OrderItem(DisplayData):
     id = models.AutoField(primary_key=True)
-    order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
     price_per_unit = models.DecimalField(max_digits=10, decimal_places=4, null=True, blank=True)
     quantity = models.IntegerField()
     product = models.CharField(max_length=255)

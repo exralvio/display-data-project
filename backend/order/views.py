@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 
-# Create your views here.
+from order.models import Order
+
+
+def get_orders(request):
+    orders = Order.objects.all()
+    order_list = list(orders.values())
+    return JsonResponse({'orders': order_list})
